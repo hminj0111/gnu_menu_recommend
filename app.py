@@ -470,14 +470,14 @@ else:
 
                     for idx, course in enumerate(courses):
                         with st.container(border=True):
-                            st.markdown(f' {course['course']}')
+                            st.markdown(f" {course['course']}")
                             col_menu, col_nutrition =st.columns([1.2, 1])
                             with col_menu:
                                 st.markdown('상세메뉴')
                                 menu_items = get_menu_items(course['course_id'])
                                 if menu_items:
                                     for item in menu_items:
-                                        st.markdown(f'- {item['menu_name']}')
+                                        st.markdown(f"- {item['menu_name']}")
                                 else:
                                     st.caption('세부 메뉴 정보가 없습니다.')
                             with col_nutrition:
@@ -518,13 +518,13 @@ else:
                             st.divider()
                             col_1, col_2, col_3, col_4 = st.columns(4)
                             with col_1:
-                                st.metric('칼로리', f'{course['total_calorie']:.0f} kcal')
+                                st.metric('칼로리', f"{course['total_calorie']:.0f} kcal")
                             with col_2:
-                                st.metric('탄수화물', f'{course['total_carb']:.1f} g')
+                                st.metric('탄수화물', f"{course['total_carb']:.1f} g")
                             with col_3:
-                                st.metric('단백질', f'{course['total_protein']:.1f} g')
+                                st.metric('단백질', f"{course['total_protein']:.1f} g")
                             with col_4:
-                                st.metric('지방', f'{course['total_fat']:.1f} g')
+                                st.metric('지방', f"{course['total_fat']:.1f} g")
                             
                             
                     st.divider()
