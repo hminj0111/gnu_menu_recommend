@@ -71,7 +71,7 @@ def get_r_list(meals, intake):
 def solve_bip(meals, target_calorie, direction, r_list, excluded=[]):
     prob = LpProblem('meal_recommendation', LpMinimize)
 
-    x = [LpVariable(f'x_{m["course_id"]}', cat='Binary') for m in meals]
+    x = [LpVariable(f"x_{m['course_id']}", cat='Binary') for m in meals]
     d = LpVariable('d', lowBound=0)
     prob += d
 
@@ -106,7 +106,7 @@ def solve_bip(meals, target_calorie, direction, r_list, excluded=[]):
 def solve_bip_step3(meals, target_calorie, r_list, excluded=[]):
     prob = LpProblem('meal_recommendation_step3', LpMinimize)
 
-    x = [LpVariable(f'x_{m["course_id"]}', cat='Binary') for m in meals]
+    x = [LpVariable(f"x_{m['course_id']}", cat='Binary') for m in meals]
     d = LpVariable('d', lowBound=0)
     prob += d
 
@@ -158,7 +158,7 @@ def recommend(conn, gender, weight, height, age, intake, direction, activity_fac
     
     #step3: 영양소 제약조건 제거(영양성분과 관련된 제약없이 목표 칼로리와 섭취 칼로리 차이를 최소화)
     prob = LpProblem('meal_recommendation_step3', LpMinimize)
-    x = [LpVariable(f'x_{m['course_id']}', cat='Binary') for m in meals]
+    x = [LpVariable(f"x_{m['course_id']}", cat='Binary') for m in meals]
     autonomous_rest = ['교직원식당','학생생활관(아람관)']
     r_list = []
     for m in meals:
