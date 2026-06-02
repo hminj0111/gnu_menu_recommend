@@ -369,7 +369,7 @@ else:
 
                                         else:
                                             st.header('탄단지 비율 목표 달성도')
-                                            st.caption('회색 범위: 목표 비율 범위(일일 권장 섭취량 기준) \n\n빨간 선: 실제 비율(실제 점심 섭취량 기준)')
+                                            st.caption('회색 범위: 목표 비율 범위(일일 권장 섭취량 기준) \n\n빨간 선: 실제 비율(추천 식단 섭취량 기준)')
 
                                             # Step 1/2: 탄단지 비율 목표 달성도 가로 막대
                                             if step_i == 2:
@@ -398,7 +398,7 @@ else:
                                                       actual_carb_ratio - 0.25],
                                                 orientation='h',
                                                 marker_color='#ff4b4b',
-                                                name='내 식단 실제 비율',
+                                                name='추천 식단 실제 비율',
                                                 text=[f'{actual_fat_ratio:.0f}%',
                                                       f'{actual_protein_ratio:.0f}%',
                                                       f'{actual_carb_ratio:.0f}%'],
