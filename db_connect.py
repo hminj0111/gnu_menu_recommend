@@ -58,7 +58,8 @@ def get_restaurant_courses(restaurant_name):
         return []
     try:
         cursor = conn.cursor(dictionary=True)
-        today = datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d')
+        #today = datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d')
+        today = '2026-06-09'
         cursor.execute('''
                         SELECT c.course_id, c.course, n.total_calorie, n.total_carb, n.total_protein, n.total_fat
                         FROM course AS c JOIN nutrition AS n ON c.course_id = n.course_id
