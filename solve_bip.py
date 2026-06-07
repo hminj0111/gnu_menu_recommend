@@ -47,8 +47,8 @@ def calculate_calorie(gender, weight, height, age, activity_factor):
 #식단 정보 조회
 def get_meals(conn):
     cursor = conn.cursor(dictionary=True)
-    today = datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d') #대한민국 시간으로 저장하도록 설정해둠
-    
+    #today = datetime.now(ZoneInfo('Asia/Seoul')).strftime('%Y-%m-%d') #대한민국 시간으로 저장하도록 설정해둠
+    today = '2026-06-09'
     cursor.execute('''
                 SELECT c.course_id, c.date, c.restaurant, c.course, n.total_calorie AS calorie,n.total_carb AS carb, n.total_protein AS protein, n.total_fat AS fat 
                 FROM course AS c JOIN nutrition AS n ON (c.course_id=n.course_id) 
